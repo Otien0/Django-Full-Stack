@@ -1,0 +1,70 @@
+Django is a free and open source web framework.
+It is used by many sites, including Pinterest, PBS, Instagram, BitBucket, Washington Times, Mozilla, and more!
+Django was created in 2003 when the web developers at the Lawrence Journal-World newspaper started using Python for their development.
+The fact that is originated at a newspaper is important!	
+When encountering Django tutorials you will often read that you should create a virtual environment or an “venv”
+A virtual environment allows you to have a virtual installation of Python and packages on your computer.
+To use a virtual environment with conda we use these commands:
+conda create --name myEnv django
+Here we created an environment called “myEnv” with the latest version of Django.
+You can then activate the environment:
+activate myEnv 
+Now, anything installed with pip or conda when this environment is activated, will only be installed for this environment.
+You can then deactivate the environment 
+deactivate myEnv 
+Its encouraged to use virtual environments for your projects to keep them self-contained and not run into issues when packages update!
+
+When you install Django, it actually also installed a command line tool called:
+django-admin
+
+>>>>>>before starting, Begin with: source activate MyDjangoEnv >>>>>>>>>>
+
+Let’s create our first project. Type:
+django-admin startproject first_project (here, first project refers to name of our project)
+  cd into first_project // then create an Application inside our first_project >>> then type:
+  python manage.py startapp first_app >>here first_app is the name of our application
+  
+  on settings/ installed apps, add first_app then run server
+
+
+A migration allows you to move databases from one design to another, this is also reversible.
+>>>>. Creating a simple application with:
+    python manage.py startapp first_app
+    
+1. LEVEL ONE TOPICS COVERED:
+  a)Setting up projects and Applications.
+  b)Creating Views and Mapping URLs.
+  c)Using Simple Templates and tags.
+  d)Serving static media files.
+  
+2. LEVEL TWO TOPICS COVERED:
+  a)Models and Databases and how to use them with Django. >>using faker >>>populating scripts.>>>MTV
+  b)Using Admin Interface.
+  c)Projects Exercise:
+     Here is what you have to do:
+    >> Add a new model called User
+     >>It should have these fields:
+     >>First Name
+     >>Last Name
+     >>Email    
+ Make sure to make the migrations!
+ Then create a script that will populate your database with fake Users.
+ Then confirm the populating through the Admin interface.
+ Then create a view for your website for the domain extension /users
+ This /users page will be an HTML list of the user names and emails
+ You will use template tags to generate this content from the User model.
+ Remember to change your urls.py files to deal with the changes to the /users extension!
+
+3. LEVEL THREE TOPICS COVERED:
+  a)In this section we will be covering how to use Django Forms to accept User Input and connect it to the database
+   and retrieve it later on.
+   
+  b)Django Forms Advantages:
+>>Quickly generate HTML form widgets
+>>Validate data and process it into a Python data structure
+>>Create form versions of our Models, quickly update models from Form
+
+ 
+
+  
+
