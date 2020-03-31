@@ -3,6 +3,9 @@ This is Full Stack Web Developer Bootcamp project using Python and Django web fr
 
 This repo invoves and elaborates techniques used in building a complete website using Python, Django, and many more web technologies.
 
+# Links:   https://docs.djangoproject.com/en/3.0/intro/
+#          https://django.readthedocs.io/en/2.2.x/
+
 # Topics covered here include:
 
 #     Building websites with HTML , CSS , Bootstrap ,
