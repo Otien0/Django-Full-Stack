@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Relative Urls</title>
+  </head>
+  <body>
+{% extends "basic_app/base.html" %}
+    {% block body_block%}
+
+    <h1>Hello and welcome to the site!</h1>
+<!--    <h1>This is the index.html page</h1>-->
+     <h1>{{ text|cut:'world' }}</h1>
+     <h1>{{ number|add:"98" }}</h1>
+
+    {% endblock %}
+
+  </body>
+</html>
