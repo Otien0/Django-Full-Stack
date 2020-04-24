@@ -19,3 +19,11 @@ When you install Django, it actually also installed a command line tool called:
 django-admin
 
 >>>>>>before starting, Begin with: source activate MyDjangoEnv >>>>>>>>>>
+
+# Useful Links:
+#               https://docs.djangoproject.com/en/3.0/
+#               https://docs.djangoproject.com/en/3.0/ref/models/fields/#foreignkey
+#               https://docs.djangoproject.com/en/3.0/topics/auth/passwords/#password-validation
+
+# Link to some features that previously were in django 1.9+, that were removed in Django 2.0 & Django 3.0;
+#               https://docs.djangoproject.com/en/3.0/releases/1.9/#features-deprecated-in-1-9s
