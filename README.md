@@ -5,6 +5,7 @@ This repo invoves and elaborates techniques used in building a complete website 
 
 # Links:   https://docs.djangoproject.com/en/3.0/intro/
 #          https://django.readthedocs.io/en/2.2.x/
+#          https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django
 
 # Topics covered here include:
 
