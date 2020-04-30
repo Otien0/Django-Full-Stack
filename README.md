@@ -8,6 +8,7 @@ This repo invoves and elaborates techniques used in building a complete website 
 #          https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django
 #          https://tutorial.djangogirls.org/en/
 #          https://github.com/NdagiStanley/django_girls_complete
+#          https://hackersandslackers.com/creating-django-views/
 
 # Topics covered here include:
 
