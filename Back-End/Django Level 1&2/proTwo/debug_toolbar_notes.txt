@@ -1,0 +1,5 @@
+Django Debug Toolbar:
+    The Django Toolbar gives useful panel tools about your project than can help you clarify why certain behaviour is happening.
+    It won't be able to directly pinpoint the exact source of a bug, it just contains useful information you may find helpful.
+    https://pypi.org/project/django-debug-toolbar/
+    https://django-debug-toolbar.readthedocs.io/en/latest/
