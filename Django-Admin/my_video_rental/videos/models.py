@@ -4,6 +4,7 @@ class Movie(models.Model):
     title = models.CharField(max_length=256)
     length = models.PositiveIntegerField()
     release_year = models.PositiveIntegerField()
+    font_size = models.IntegerField()
 
     def __str__(self):
         return self.title
