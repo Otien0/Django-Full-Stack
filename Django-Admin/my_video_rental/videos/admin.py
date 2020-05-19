@@ -13,5 +13,7 @@ class MovieAdmin(admin.ModelAdmin):
 
     list_editable = ['length']
 
+    change_list_template = 'admin/videos/change_list.html'
+
 admin.site.register(models.Customer)
 admin.site.register(models.Movie,MovieAdmin)
