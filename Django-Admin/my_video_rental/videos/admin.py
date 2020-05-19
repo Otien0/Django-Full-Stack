@@ -11,7 +11,7 @@ class MovieAdmin(admin.ModelAdmin):
 
     list_filter = ['release_year','title','length']
 
-    list_display = ['title','release_year','length']
+    list_display = ['title','release_year','length','font_size']
 
     list_editable = ['length']
 
