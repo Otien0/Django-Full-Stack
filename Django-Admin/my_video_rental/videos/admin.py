@@ -31,8 +31,9 @@ class MovieAdmin(admin.ModelAdmin):
         return HttpResponseRedirect("../")
 
     def font_size_html_display(self, obj):
+        display_size = obj.font_size if obj.font_size <= 30 else 30
         return format_html(
-            f'<span style="font-size: {obj.font_size}px;">{obj.font_size}</span>'
+            f'<span style="font-size: {display_size}px;">{obj.font_size}</span>'
         )
 
 
