@@ -1,0 +1,306 @@
+Django is a free and open source web framework.
+It is used by many sites, including Pinterest, PBS, Instagram, BitBucket, Washington Times, Mozilla, and more!
+Django was created in 2003 when the web developers at the Lawrence Journal-World newspaper started using Python for their development.
+The fact that is originated at a newspaper is important!	
+When encountering Django tutorials you will often read that you should create a virtual environment or an “venv”
+A virtual environment allows you to have a virtual installation of Python and packages on your computer.
+To use a virtual environment with conda we use these commands:
+conda create --name myEnv django
+Here we created an environment called “myEnv” with the latest version of Django.
+You can then activate the environment:
+activate myEnv 
+>> You can also list all discoverable environments with `conda info --envs`.s
+Now, anything installed with pip or conda when this environment is activated, will only be installed for this environment.
+You can then deactivate the environment 
+deactivate myEnv 
+Its encouraged to use virtual environments for your projects to keep them self-contained and not run into issues when packages update!
+
+When you install Django, it actually also installed a command line tool called:
+django-admin
+
+>>>>>>before starting, Begin with: source activate MyDjangoEnv >>>>>>>>>>
+
+
+NOTE>>> CREATING FIRST PROJECT>>>>
+ON Terminal under the PWD/CWD, Type:
+  >>> django-admin startproject first_project (here, first project refers to name of our project)
+  >>> cd into first_project // then create an Application inside our first_project;
+  >>>  i.e: django-admin startapp first_app
+  >>> inside first_project_dir, create a templates folder
+  >>> inside templates folder/dir, create another folder that matches the name of our application,
+       i.e first_app_dir
+  >>> Then go to settings.py file, And set the 'TEMPLATES_DIR', to;
+      TEMPLATE_DIR = os.path.join(BASE_DIR,'templates')... that;s after the 'BASE_DIR' line
+  >>> Then scroll down on settings to 'INSTALLED APP', add 'first_app'
+  >>> Still on settings, scroll down to 'TEMPLATES []' then add on line with 'DIRS'
+       i.e; 'DIRS': [TEMPLATE_DIR,],
+  >>> Now head on to templates folder, under 'first_app' dir, create the html files and set them
+  >>> Now go to first_app then to views.py file and set it
+  >>> under first_project, set the urls.py file,>> set it by using the "regular expression" >>> url(r'^$',views.index.....).
+  >>> switch to first_app, create a new 'urls.py' 
+  >>> Now test the server to see if it runs by; >>> python manage.py runserver
+  >>> After, make migrations by; >>> python manage.py migrate >> 'ENTER'
+  >>> then type again:
+       python manage.py run server
+      A migration allows you to move databases from one design to another, this is also reversible.
+
+################__NOTE__############
+>>>>>>Before you begin any Django Project, it is always a good idea to sketch out the main idea and organization by hand.>>>
+>>>This will help you realize what can be used for template inheritance and what applications you should create!>>>>
+
+    
+1. LEVEL ONE TOPICS COVERED:
+  a)Setting up projects and Applications.
+  b)Creating Views and Mapping URLs.
+  c)Using Simple Templates and tags.
+  d)Serving static media files.
+  
+2. LEVEL TWO TOPICS COVERED:
+  a)Models and Databases and how to use them with Django. >>using faker >>>populating scripts.>>>MTV
+  b)Using Admin Interface.
+  c)Projects Exercise:
+     Here is what you have to do:
+    >> Add a new model called User
+     >>It should have these fields:
+     >>First Name
+     >>Last Name
+     >>Email    
+ Make sure to make the migrations!
+ Then create a script that will populate your database with fake Users.
+ Then confirm the populating through the Admin interface.
+ Then create a view for your website for the domain extension /users
+ This /users page will be an HTML list of the user names and emails
+ You will use template tags to generate this content from the User model.
+ Remember to change your urls.py files to deal with the changes to the /users extension!
+
+3. LEVEL THREE TOPICS COVERED:
+  a)In this section we will be covering how to use Django Forms to accept User Input and connect it to the database
+   and retrieve it later on.
+   
+  b)Django Forms Advantages:
+>>Quickly generate HTML form widgets
+>>Validate data and process it into a Python data structure
+>>Create form versions of our Models, quickly update models from Form
+   
+   HTTP >> HTTP stands for Hypertext Transfer Protocol and is designed to enable communication between a client and a server.
+           The client submits a request, the server then responds.
+
+   GET >> requests data from a resource.
+   POST >> submits data to be process to a resource.
+   a)Basic forms
+   b)Form Validation; adding a check for empty fields, adding a check for a 'bot', adding a clean method for the entire form.
+   
+4. LEVEL FOUR TOPICS COVERED:
+  a)Relative URLs with Templates.
+    >>>NOTE: On "relative_url_templates", on this anchor_tag; <a href="{% url 'basic_app:other' %}">Link to other.html</a>
+        >> make sure not to leave space between the """basic_app:other'""" as this will return an error
+      >>>make migartions then runserver
+    
+  b)URL Template Inheritance. Also known as Template Extending.
+    Here are the main steps for inheritance:
+      >>>Find the repetitive parts of your project
+      >>>Create a base template of them
+      >>>Set the tags in the base template
+      >>>Extend and call those tags anywhere
+      
+  c)Template filters and custom filters
+    >>The general form for a template filter is:
+            {{ value | filter:”parameter” }}
+            Not all filters take in parameters.
+    >>Creating own custom filters in (templatetags) and registering them, using decorators.
+    
+5. LEVEL FIVE TOPICS COVERED:
+   This section focuses mainly on; User Authentication.
+   Also will focus mainly on the built-in tools such as:
+         >>>Users and the User Model
+         >>>Permissions
+         >>>Groups
+         >>>Passwords and Authentication
+         >>>Logging In and Out
+         
+   a) Passwords:
+     Never store passwords as plain text!
+     Here we use the default PBKDF2 algorithm with an SHA256(Secure_Harsh_Algorithm) hash that is built-in to Django.
+     This is quite secure for most applications, it requires a massive amount of computing power to crack it. 
+     >>> pip install bcrypt
+     >>> pip install django[argon2]
+     >>> parse in a list of password Harshers >> link: https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
+     
+   b) User Models:
+      This discusses on how to use Django’s built in tools to create User Authorization Models.
+       And also discuss how to set-up media files in your project.
+      This section involves:
+      >>User Model
+      >>Media Directory
+      >>Handling Images
+      >>User Form
+      
+   c) Registration:
+      A lot of the coding for working with Users and Authorization happens in the views.py file.
+      The basic idea is that we check if there is a POST request and then perform some sort of action based off that information.
+      Sometimes we will want to save that information directly to the database.
+      Other times, we will set commit=False so we can manipulate the data before saving it to the database.
+      This helps prevent collision errors.
+      
+   d) Logins:
+      This section covers through the entire process of creating log in / log out functionality.
+      This process involves:
+           >>>Setting up the login views
+           >>>Using built-in decorators for access
+           >>>Adding the LOGIN_URL in settings
+           >>>Creating the login.html
+           >>>Editing the urls.py files
+
+6) DJANGO DEPLOYMENT:
+   Using Python Anywhere.com;
+   go to bash and type;
+   mkvirtualenv --python=/usr/bin/python3.7 myproj-virtualenv
+   before installing django on virtual env; go to idle on machine; type;
+   >>>python
+   >>>import django
+   >>>django.__version__  >> to know the version of django to install
+   then back to bash on remote and install it by;
+   >>>> pip install -U django=="version"
+   -In order to confirm if django is installed type:
+   >>> which django-admin.py
+   >>> clone your github repo on bash
+   >>> cd into it, and also into your basic_app
+   >>> make all migrations
+   >>> python manage.py createsuperuser
+   >>> click on to Dashboard then go to web
+   >>> add a new webApp and follow all those steps carefully
+   >>> here select manual config instead of using Django framework, this is in order to edit the wsgi file under virtual env   
+   >>> After the steps and WSGI file created, move to "Enter path to virtual env" section, and enter your virtual env path 
+   >>>>>>> i.e: /home/moryso2020/.virtualenvs/myproj >>> then;
+   >>>  CLICK: Start a console in this virtualenv   
+   >>>> then scroll up to: "Enter the path to your web app source code" , and before this, start a console first, in order to get 
+   >>>>>>> -to get the actual path to source code. That's after navigating to the "learning_templates" path.\
+   >>> copy the full path and paste it into the :"source code" area
+   >>>> After that, click on the "WSGI configuration file:" to edit it
+   >> remove the hello world code, from line 13--47
+   >>> Start un-commenting the line from where Django starts, that's depending on your Django version
+   >>> set the path to;
+                    >>> path = '/home/moryso2020/Django-Deployment-Demo/learning_templates/
+  >>> provide django where the settings.py file is located in your machine
+        >>>> i.e; os.environ['DJANGO_SETTINGS_MODULE'] = 'learning_templates.settings'
+        then :
+              import django
+              django.setup() >> then uncomment the two preceeding lines
+  >>>save it then go to Dashboard, then web to see if the link is created, click it to run your website
+  >>After, go back to the web-tab and fix the static files
+  >>>URL: /static/admin
+  >>>Dir: /home/moryso2020/.virtualenvs/myproj/lib/python3.7/site-packages/django/contrib/admin/static/admin
+  >>> Reload the web app
+  >>> Turn off debug mode on settings.py >>DEBUG=False (This could have been done earlier before running the web app)
+  >>> on settings.py file, Allowed hosts = ['moryso2020.pythonanywhere.com'] >> this is under files to your app
+  >>> after settings.py on web-tab, in files go back twice upto this dir:
+                >>> /home/moryso2020/Django-Deployment-Demo/learning_templates
+     >> Create a new directory; "static" , this is our static files dir
+     >> back to web-app/tab and reload to open the link in new tab
+ >>> Now set the link to your static files localy;
+     >>URL: /static/
+     >>Dir:/home/moryso2020/Django-Deployment-Demo/learning_templates/static
+     <>reload then open the link
+
+
+Advanced Django
+7. CLASS BASED VIEWS(CBV):
+   The CBV offers great functionality and for most experienced users of Django, it is their default choice for creating views.
+   It is much easier to understand CBV after working with function views!
+   >> Detail view and List View
+   >> CRUD Views
+     >> it stands for: Create Retrieve Update Delete
+     CRUD is inherent to almost every website!
+
+8. First Clone Project: Blog-Project
+
+   https://docs.djangoproject.com/en/3.0/ref/models/querysets/
+   https://tutorial.djangogirls.org/en/django_orm/
+   https://docs.djangoproject.com/en/3.0/ref/models/querysets/#lte
+   https://docs.djangoproject.com/en/3.0/ref/class-based-views/generic-display/
+   https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Generic_views
+   https://docs.djangoproject.com/en/3.0/topics/class-based-views/mixins/
+   https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Authentication
+   
+   >>>>On base.html && blog.css";
+       >>> Ensure to download or copy the medium_style editor on github then link it to your base.html file
+       >> i.e; go to: https://github.com/yabwe/medium-editor 
+       >>> copy the CDN link, for the latest version
+     
+  >>> go to codepen.io to view and select some suitable css/html codes for your project
+     >>>> head on to: https://codepen.io/thapliyalshivam/pen/dvgXVO, and copy it
+        >>> get rid of b1,b2,&b3 classes and h1 too
+ >>> go to; https://fonts.google.com/ >> search for "russso" && "Montserrat" then select them to copy
+     and paste the links to your  base.html file
+
+9. Social Media Site Clone Project:
+  This project involves taking bits and pieces from other social sites to build own platform.
+  It will have a key features such as;
+                 a) Groups(si,ilar to subreddits)
+                 b) Multiple Users and Authorizations.
+                 c) Posts in groups(similar to a tweet)
+                 d) Linking User profiles with @ symbol
+                 e) Multiple applications.
+   TIPS:
+   Check on models>> auth.models.User
+   >>>> from django.urls import reverse_lazy>>>>> this is the newly updated import in django 3.0""
+   <>> here, reverse lazy is used to direct users after they login/out, where should they go to...
+   
+  >> Downloading bootstrap for django >> pip install django-bootstrap4
+     >>> then visit this page... https://pypi.org/project/django-bootstrap4/ for more info
+  >> Google about "slugify" && "misaka" and know how to use them
+           >>> https://pypi.org/project/django-slugify-processor/
+           >>> https://pypi.org/project/django-misaka/
+  
+ Another requirements for the posts application is to install the django-braces package; 
+ which allows us to access some convenient Mixins to use with CBVs(Class Based Views)
+    >> Inside your virtual environment use; pip install django-braces 
+    
+ Check on Django ORM Concept
+ >>>> The css, and js stylings are all available on codepen; 
+                  check this site;    https://codepen.io/Thibka/pen/mWGxNj
+ Copy the codes and paste it to your static files
+
+10. Django Debug Toolbar:
+    The Django Toolbar gives useful panel tools about your project than can help you clarify why certain behaviour is happening.
+    It won't be able to directly pinpoint the exact source of a bug, it just contains useful information you may find helpful.
+    https://pypi.org/project/django-debug-toolbar/
+    https://django-debug-toolbar.readthedocs.io/en/latest/
+
+11. Customizing Django Admin:
+    This focuses on how to customize the Django Admin page.
+    Topics covered here include;
+          1. Review Admin Page
+          2. Change Admin page Template
+          3. Changing Order of Fields
+          4. Add Search and Filters to Admin
+          
+   >> head on to github ; https://github.com/django/django
+          >>> go to django/contrib/admin/templates/admin/base_site.html
+          >>> copy the code and paste it into your same_name folder 
+          
+   >>>NOTE: Always be keen when specifying the templates directory to avoid wasting time and data on debugging >>>>
+   
+   >> Use django suit package to customize the admin:
+                                                    https://pypi.org/project/django-suit/
+                                                    
+   >> Documentation at; https://django-suit.readthedocs.io/en/v2/install.html
+   
+12. API Development(DJANGO REST FRAMEWORK):
+    >> What is an API
+       API refers to Application Programming Interface,which is a set of subroutine definitions, 
+       protocols and tools for building application software. It helps in connecting various software components.
+       
+    >> Intro to REST FRAMEWORK -- It represents an architecture which stands for REpresentational State Transfer.
+       It is used for web based architecture for data communication. It uses HTTP to make calls between machines.
+       The most commont methods in REST Architecture are: 
+           GET, PUT, POST, DELETE
+           
+    >> REST API __ When web services use REST architecture, they are called RESTFUL APIs OR REST APIs. 
+       A REST API is a set of web addresses that respond with pure information, not a formatted web page.
+        An API returns a JSON, which is a common format.
+    >> DEMO
+    >> Once complete, copy the url and paste it to postman, to check if your API is working as requred.
+
+  
+
