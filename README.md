@@ -1,5 +1,5 @@
 # Django-Full-Stack
-This is Full Stack Web Development Bootcamp project using Python and Django web framework.
+This is a Full Stack Web Development Bootcamp project using Python and Django-backend framework.
 
 This repo invoves and elaborates techniques used in building a complete website using Python, Django, with Deployment, and many more web technologies.
 
