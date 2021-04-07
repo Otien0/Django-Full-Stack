@@ -1,23 +1,31 @@
 {% extends "blog/base.html" %}
 {% block content %}
-<h1>About me</h1>
+<div>
+    <h1>About me</h1>
+    <div class="col-md-4">
+        <img src="/media/images/moryso.jpg" class="img-responsive" style="width: 100%; float: left; margin-right: 10px;" />
+    </div>
+    <div>
+        <p>
+            I am software engineer with a degree in BSc in Mathematics and Computer Science attained at Taita Taveta University,
+            having specialized in Applied Mathematics option, and currently awaiting to graduate on 6th May this year.
+        </p>
 
-<div class="col-md-4">
-    <img src="/media/images/moryso.jpg" class="img-responsive" style="width: 100%; float: left; margin-right: 10px;" />
+    </div>
+    <div class="container">
+        <p> Majorly, I am a full stack software developer with experiences in:
+            <li class="list-unstyled">
+                <a href="https://github.com/mourice-oduor/Django-Full-Stack" target="_blank" rel="noopener noreferrer">Python- Django</a>
+            </li>
+            <li class="list-unstyled">
+                <a href="https://github.com/mourice-oduor/Node.js" target="_blank" rel="noopener noreferrer">JavaScript- MERN Stack</a>
+            </li>
+            <li class="list-unstyled">
+                <a href="https://github.com/mourice-oduor/CSharp-ASP.NET-CORE" target="_blank" rel="noopener noreferrer">C#- FullStack Asp.Net <Core></Core></a>
+            </li>
+        </p>
+        <p>Thanks for visiting my blog! Check all my projects on the github link above!</p>
+    </div>
 </div>
 
-
-<p> I am a software engineer with a degree in BSc Mathematics and Computer Science. I have
-    Specialized in Applied Mathematics option, and a final year student at Taita Taveta University.
-    <p> I am a full stack software developer with skills in;</p>
-    <li><a href="https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django">Python- with Django in web
-            development</a></li>
-    <li><a href="https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/Introduction">JavaScript-
-            with Nodejs(mongodb)</a></li>
-
-</p>
-
-
-
-<p>Thanks for visiting my blog! Check all my projects on the github link above!</p>
 {% endblock %}
